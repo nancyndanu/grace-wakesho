@@ -1,376 +1,253 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Grace Kubo | Graphic Designer & Communication Specialist</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Professional graphic designer and communication specialist Grace Kubo's portfolio">
-  <meta name="keywords" content="graphic design, social media, communication, branding">
-  <meta name="author" content="Grace Kubo">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: '#6A4E77',
-            secondary: '#EAE6F2',
-            accent: '#B388D9',
-            dark: '#3A2C4D'
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Kubo - Portfolio</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-      }
-    }
-  </script>
-
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
-  </style>
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #fff;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .header p {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: #fff;
+            padding: 50px 0;
+            margin: 20px 0;
+        }
+        
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Certifications Section */
+        .certifications {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            margin: 20px 0;
+        }
+        
+        .certifications h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        /* Brand Experience Section */
+        .brands {
+            background-color: #fff;
+            padding: 50px 0;
+            margin: 20px 0;
+        }
+        
+        .brands h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .brand-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 15px 25px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        /* Footer Section */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-
-<body class="bg-secondary text-dark scroll-smooth">
-
-  <!-- Navigation -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-primary">Grace Kubo</h1>
-      <nav class="space-x-4 hidden md:block">
-        <a href="#home" class="hover:text-primary font-medium">Home</a>
-        <a href="#about" class="hover:text-primary font-medium">About</a>
-        <a href="#services" class="hover:text-primary font-medium">Services</a>
-        <a href="#certifications" class="hover:text-primary font-medium">Certifications</a>
-        <a href="#projects" class="hover:text-primary font-medium">Projects</a>
-        <a href="#contact" class="hover:text-primary font-medium">Contact</a>
-      </nav>
-
-      <!-- Dark Mode Toggle -->
-      <button id="dark-mode-toggle" class="mr-4 p-2 rounded-full">
-        <i id="dark-icon" class="fas fa-moon"></i>
-        <i id="light-icon" class="fas fa-sun hidden"></i>
-      </button>
-
-      <!-- Mobile Menu Toggle -->
-      <button id="mobile-menu-button" class="md:hidden text-primary">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-2 px-6">
-      <a href="#home" class="block py-2 hover:text-primary">Home</a>
-      <a href="#about" class="block py-2 hover:text-primary">About</a>
-      <a href="#services" class="block py-2 hover:text-primary">Services</a>
-      <a href="#certifications" class="block py-2 hover:text-primary">Certifications</a>
-      <a href="#projects" class="block py-2 hover:text-primary">Projects</a>
-      <a href="#contact" class="block py-2 hover:text-primary">Contact</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home" class="py-20 bg-primary text-white text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-4">Hi, I'm Grace Kubo</h2>
-      <p class="text-lg mb-6">Graphic Designer | Social Media Manager | Communication Specialist</p>
-      <a href="#projects" class="bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-dark transition">View My Work</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-8">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="flex justify-center space-x-6 mb-4">
-        <a href="#" class="hover:text-accent"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="hover:text-accent"><i class="fab fa-behance"></i></a>
-        <a href="#" class="hover:text-accent"><i class="fab fa-dribbble"></i></a>
-      </div>
-      <p>&copy; 2023 Grace Kubo. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Toggle Scripts -->
-  <script>
-    const mobileBtn = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    const darkToggle = document.getElementById('dark-mode-toggle');
-    const darkIcon = document.getElementById('dark-icon');
-    const lightIcon = document.getElementById('light-icon');
-
-    darkToggle.addEventListener('click', () => {
-      document.body.classList.toggle('bg-white');
-      document.body.classList.toggle('bg-secondary');
-      darkIcon.classList.toggle('hidden');
-      lightIcon.classList.toggle('hidden');
-    });
-  </script>
-
-</body>
-</html>
-<section id="about" class="bg-white text-dark py-16 px-6">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-primary mb-4">About Me</h2>
-    <p class="text-lg mb-4">I’m a versatile and driven Communication Specialist with strong expertise in graphic design, digital storytelling, and social media management.</p>
-    <p class="text-base text-gray-700">I combine creative thinking with strategic execution to help brands communicate with clarity and impact online and offline. With hands-on experience across public and private sectors, I’ve delivered results for solar energy companies, procurement firms, and construction companies.</p>
-
-    <div class="mt-8 text-left">
-      <h3 class="text-xl font-semibold text-primary mb-2">Education & Certifications</h3>
-      <ul class="list-disc list-inside text-gray-800">
-        <li><strong>B.Sc. Communications & Journalism</strong> – Rongo University (2020–2024), Second Class Honours (Upper Division)</li>
-        <li>AI Career Essentials</li>
-        <li>Virtual Assistant Training</li>
-      </ul>
-    </div>
-  </div>
-</section>
-<!-- Services Section -->
-<section id="services" class="py-16 px-6 bg-secondary text-center">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-primary mb-10">Services Offered</h2>
-    <div class="grid md:grid-cols-2 gap-8 text-left text-dark">
-      <div>
-        <h3 class="text-xl font-semibold text-primary mb-2">01. Graphic Design</h3>
-        <p>Creating visually compelling content for print and digital platforms, including brochures, posters, logos, and branding collateral.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-primary mb-2">02. Social Media Design</h3>
-        <p>Designing engaging visual content for platforms like Instagram, Facebook, and LinkedIn that aligns with brand identity and campaign goals.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-primary mb-2">03. Branding</h3>
-        <p>Crafting unique brand identities that reflect the vision and values of businesses, including brand guides and visual systems.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-primary mb-2">04. Communication Strategy</h3>
-        <p>Developing targeted strategies to enhance brand communication and engagement across digital and traditional channels.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Services Section -->
-<section id="services" class="py-16 px-6 bg-secondary text-center">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-primary mb-10">Services Offered</h2>
-    <div class="grid md:grid-cols-2 gap-8 text-left text-dark">
-      <div>
-        <h3 class="text-xl font-semibold text-primary mb-2">01. Graphic Design</h3>
-        <p>Creating visually compelling content for print and digital platforms, including brochures, posters, logos, and branding collateral.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-primary mb-2">02. Social Media Design</h3>
-        <p>Designing engaging visual content for platforms like Instagram, Facebook, and LinkedIn that aligns with brand identity and campaign goals.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-primary mb-2">03. Branding</h3>
-        <p>Crafting unique brand identities that reflect the vision and values of businesses, including brand guides and visual systems.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-primary mb-2">04. Communication Strategy</h3>
-        <p>Developing targeted strategies to enhance brand communication and engagement across digital and traditional channels.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Brand Experience Section -->
-<section id="experience" class="py-16 px-6 bg-white text-center">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-primary mb-10">Brand Experience</h2>
-    <p class="text-dark mb-6">I’ve worked with brands across various sectors including non-profits, development agencies, and media organizations. My design and communication work has supported their missions, storytelling, and visibility goals.</p>
-    <div class="grid md:grid-cols-4 gap-6 justify-items-center items-center mt-8">
-      <img src="assets/brand1.png" alt="Brand 1" class="h-12 object-contain" />
-      <img src="assets/brand2.png" alt="Brand 2" class="h-12 object-contain" />
-      <img src="assets/brand3.png" alt="Brand 3" class="h-12 object-contain" />
-      <img src="assets/brand4.png" alt="Brand 4" class="h-12 object-contain" />
-    </div>
-  </div>
-</section>
-
-</section>
-<section id="certifications" class="bg-white py-16 px-6 text-center">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold text-primary mb-10">Certifications</h2>
-    <div class="grid md:grid-cols-2 gap-8 text-left">
-
-      <div class="bg-secondary rounded-lg p-6 shadow">
-        <h3 class="text-xl font-semibold text-dark">Strategic Communication & Media Training</h3>
-        <p class="text-gray-700 mt-2">Trained in public communication strategies to enhance media engagement and storytelling techniques.</p>
-      </div>
-
-      <div class="bg-secondary rounded-lg p-6 shadow">
-        <h3 class="text-xl font-semibold text-dark">Digital Marketing & Content Strategy</h3>
-        <p class="text-gray-700 mt-2">Completed coursework in SEO, social media strategy, and audience engagement optimization.</p>
-      </div>
-
-      <div class="bg-secondary rounded-lg p-6 shadow">
-        <h3 class="text-xl font-semibold text-dark">Branding & Visual Identity</h3>
-        <p class="text-gray-700 mt-2">Learned visual storytelling, logo design, and consistent branding across platforms.</p>
-      </div>
-
-      <div class="bg-secondary rounded-lg p-6 shadow">
-        <h3 class="text-xl font-semibold text-dark">Leadership in Communication</h3>
-        <p class="text-gray-700 mt-2">Participated in workshops for effective team communication, media planning, and campaign execution.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- Projects Section -->
-<section id="projects" class="bg-secondary py-16 px-6 text-center">
-  <h2 class="text-3xl font-bold text-primary mb-8">Projects</h2>
-  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-
-    <!-- Project 1 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="assets/projects/branding-campaign.jpg" alt="Branding Campaign" class="rounded mb-4">
-      <h3 class="font-semibold text-dark text-xl">Branding Campaign</h3>
-      <p class="text-sm text-gray-600 mt-2">Full brand identity for a local NGO.</p>
-      <button onclick="openModal('branding')" class="text-accent font-medium mt-2 inline-block">View Project</button>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="assets/projects/social-media-strategy.jpg" alt="Social Media" class="rounded mb-4">
-      <h3 class="font-semibold text-dark text-xl">Social Media Strategy</h3>
-      <p class="text-sm text-gray-600 mt-2">Graphics and analytics for a food brand.</p>
-      <button onclick="openModal('social')" class="text-accent font-medium mt-2 inline-block">View Project</button>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="assets/projects/magazine-design.jpg" alt="Magazine Design" class="rounded mb-4">
-      <h3 class="font-semibold text-dark text-xl">Editorial Magazine</h3>
-      <p class="text-sm text-gray-600 mt-2">Multi-page youth empowerment design.</p>
-      <button onclick="openModal('magazine')" class="text-accent font-medium mt-2 inline-block">View Project</button>
-    </div>
-
-  </div>
-</section>
-<script>
-  const projects = {
-    branding: {
-      title: "Branding Campaign for Local NGO",
-      description: "Developed full branding including logo, color palette, and messaging for a women-led non-profit. The goal was to establish a visual identity aligned with the NGO’s mission and community impact.",
-      image: "assets/projects/branding-campaign.jpg",
-      tools: "Adobe Illustrator, Photoshop, Brand Strategy",
-    },
-    social: {
-      title: "Social Media Strategy – Grace Eats",
-      description: "Planned and executed a 3-month campaign for Grace Eats, a food blog brand. Included custom graphic templates, engagement calendars, and detailed insights from analytics tools.",
-      image: "assets/projects/social-media-strategy.jpg",
-      tools: "Canva, Meta Suite, Hootsuite",
-    },
-    magazine: {
-      title: "Editorial Design – Inspire Magazine",
-      description: "Designed a print and digital magazine layout for Inspire, a publication centered on youth empowerment and creative expression. Included front cover, article layout, and ads.",
-      image: "assets/projects/magazine-design.jpg",
-      tools: "InDesign, Typography, Layout Design",
-    }
-  };
-
-  function openModal(id) {
-    const project = projects[id];
-    document.getElementById("modal-body").innerHTML = `
-      <img src="${project.image}" alt="${project.title}" class="w-full rounded mb-4">
-      <h3 class="text-xl font-bold text-primary mb-2">${project.title}</h3>
-      <p class="text-sm text-gray-700 mb-2">${project.description}</p>
-      <p class="text-sm text-gray-500"><strong>Tools:</strong> ${project.tools}</p>
-    `;
-    document.getElementById("modal-overlay").classList.remove("hidden");
-  }
-
-  function closeModal() {
-    document.getElementById("modal-overlay").classList.add("hidden");
-  }
-</script>
-<!-- Modal Background -->
-<div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-60 hidden z-50 flex items-center justify-center">
-  <!-- Modal Content -->
-  <div id="modal-content" class="bg-white rounded-lg shadow-xl max-w-2xl w-full p-6 relative">
-    <button onclick="closeModal()" class="absolute top-2 right-2 text-xl text-gray-500 hover:text-primary">&times;</button>
-    <div id="modal-body" class="text-left">
-      <!-- Modal content will be inserted here -->
-    </div>
-  </div>
-</div>
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Grace Wakesho Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <meta name="description" content="Get in touch with Grace Wakesho – Graphic Designer & Communication Specialist.">
-  <meta name="keywords" content="contact, grace wakesho, designer, communication">
-  <meta name="author" content="Grace Wakesho">
-</head>
-<body class="bg-secondary text-dark font-sans">
-
-  <!-- Navigation (optional if not included in all pages) -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-primary">Grace Wakesho</h1>
-      <nav class="space-x-4 text-sm font-medium">
-        <a href="index.html" class="text-dark hover:text-primary">Home</a>
-        <a href="about.html" class="text-dark hover:text-primary">About</a>
-        <a href="projects.html" class="text-dark hover:text-primary">Projects</a>
-        <a href="contact.html" class="text-primary">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Contact Section -->
-  <section class="py-16 px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-primary mb-4">Let’s Connect</h2>
-      <p class="mb-8 text-gray-700">If you'd like to work together, ask a question, or simply say hello, use the form below or reach out directly via email or social media.</p>
-
-      <form action="https://formspree.io/f/xgvyjkwv" method="POST" class="bg-white p-8 rounded-lg shadow space-y-6">
-        <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" name="name" placeholder="Your Name" required class="w-full border border-gray-300 rounded px-4 py-2" />
-          <input type="email" name="email" placeholder="Your Email" required class="w-full border border-gray-300 rounded px-4 py-2" />
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Hello,<br>I'M GRACE KUBO</h1>
+            <p>GRAPHIC DESIGNER | SOCIAL MEDIA MANAGER</p>
         </div>
-        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full border border-gray-300 rounded px-4 py-2"></textarea>
-        <button type="submit" class="bg-primary text-white px-6 py-3 rounded shadow hover:bg-dark transition">Send Message</button>
-      </form>
-
-      <!-- Contact Info -->
-      <div class="mt-10 text-center text-sm text-gray-600">
-        <p>Email: <a href="mailto:grace@example.com" class="text-primary underline">kubowakesho@gmail.com</a></p>
-        <p>Phone: +254 790 279 402</p>
-        <div class="flex justify-center space-x-6 mt-4">
-          <a href="https://linkedin.com" target="_blank" class="text-primary hover:underline">LinkedIn</a>
+    </header>
+    
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm an versatile and driven Communication Specialist with strong expertise in graphic design, digital marketing, and social media management. Locations include a range of retailing and services to high-tech communications and/or shopping centers, as well as different retail for size ranging categories. Please contact company and contact our company.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-6 text-center mt-12">
-    <p>&copy; 2025 Grace Wakesho. All rights reserved.</p>
-  </footer>
-
+    </section>
+    
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="container">
+            <h2>CERTIFICATIONS</h2>
+            <h3>AUTHOR'S RESPONSE</h3>
+            <p>Virtual Adbit and Telecom</p>
+            
+            <h2>Services Offer</h2>
+            
+            <div class="services">
+                <!-- Graphic Design Card -->
+                <div class="service-card">
+                    <h3>Graphic Design</h3>
+                    <p>I work very well with our creativity and career in creating my relationships and great efficiency in product, including your target solutions.</p>
+                    <p>Legalizing</p>
+                    <p>Installation Design</p>
+                    <p>Business Products</p>
+                    <p>Analytics Designer</p>
+                </div>
+                
+                <!-- Social Media Card -->
+                <div class="service-card">
+                    <h3>Social Media Management</h3>
+                    <p>I can take multiple types of shopping strategies and play a variety of activities, including the delivery of products and other opportunities.</p>
+                    <p>Design Development</p>
+                    <p>Global Business Excellence</p>
+                    <p>Product Management</p>
+                    <p>Responsible business & business</p>
+                </div>
+                
+                <!-- Photography Card -->
+                <div class="service-card">
+                    <h3>Photography</h3>
+                    <p>Our best customer experience is that I support people working from online, mobile and online shopping platforms. We are also invited to digital technologies, websites, products and other applications.</p>
+                    <p>Efficientness</p>
+                    <p>Product & Safety Drives</p>
+                    <p>Smart Equipment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Brand Experience Section -->
+    <section class="brands">
+        <div class="container">
+            <h2>BRAND EXPERIENCE</h2>
+            <div class="brand-logos">
+                <div class="brand">TURN</div>
+                <div class="brand">RADIUM</div>
+                <div class="brand">RAZYNOW ENERGY</div>
+                <div class="brand">RAYH&MES</div>
+                <div class="brand">AYSHANE</div>
+                <div class="brand">DUDINA ATREA</div>
+                <div class="brand">RAYH&MES</div>
+                <div class="brand">RAYH&MES</div>
+                <div class="brand">RATH&MES</div>
+                <div class="brand">RATH&MES</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>Thank you for viewing my portfolio.</p>
+            <p>I am a new manufacturer through various chunks, or attempts to guide this production step purpose.</p>
+            <p>If you have something like some type, I hope my work seems to be hard, and we can help you make it important.</p>
+            <p>Let's collaborate:</p>
+            <p>Information generation</p>
+            <p>JUST THE 20-30S</p>
+            <p>Share Sales (Top 10 to Bottom 5 to Leads)</p>
+            <a href="#" class="contact-btn">Contact Me</a>
+        </div>
+    </footer>
 </body>
 </html>
