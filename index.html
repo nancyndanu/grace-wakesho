@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grace Kubo - Portfolio</title>
     <style>
+        /* Color Palette */
+        :root {
+            --primary: #2A2D34;     /* Dark blue-gray for headings */
+            --secondary: #5C6F68;   /* Muted green for accents */
+            --accent: #8A4F7D;      /* Elegant purple for highlights */
+            --light: #F7F7F7;       /* Off-white for backgrounds */
+            --dark: #1A1A1A;        /* Nearly black for text */
+            --medium: #6D7275;      /* Medium gray for secondary text */
+        }
+        
         /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', Arial, sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
         }
         
         .container {
@@ -25,36 +35,75 @@
             padding: 20px;
         }
         
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
         /* Header Section */
         .header {
             text-align: center;
-            padding: 50px 0;
-            background-color: #fff;
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: bottom;
         }
         
         .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            font-weight: bold;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .header p {
             font-size: 1.5rem;
-            color: #666;
+            color: rgba(255,255,255,0.9);
             margin-bottom: 30px;
+            position: relative;
+            font-weight: 300;
         }
         
         /* About Section */
         .about {
-            background-color: #fff;
-            padding: 50px 0;
-            margin: 20px 0;
+            background-color: white;
+            padding: 80px 0;
+            margin: 0;
         }
         
         .about h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
             text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
         }
         
         .about p {
@@ -62,19 +111,34 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            color: var(--medium);
+            line-height: 1.8;
         }
         
         /* Certifications Section */
         .certifications {
-            background-color: #f9f9f9;
-            padding: 50px 0;
-            margin: 20px 0;
+            background-color: var(--light);
+            padding: 80px 0;
+            margin: 0;
         }
         
         .certifications h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
             text-align: center;
+        }
+        
+        .certifications h3 {
+            text-align: center;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .certifications p {
+            text-align: center;
+            color: var(--medium);
+            margin-bottom: 40px;
         }
         
         .services {
@@ -82,37 +146,52 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
+            margin-top: 50px;
         }
         
         .service-card {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 350px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .service-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #444;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-align: center;
         }
         
         .service-card p {
             font-size: 1rem;
-            color: #666;
+            color: var(--medium);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .service-card p:last-child {
+            margin-bottom: 0;
         }
         
         /* Brand Experience Section */
         .brands {
-            background-color: #fff;
-            padding: 50px 0;
-            margin: 20px 0;
+            background-color: white;
+            padding: 80px 0;
+            margin: 0;
         }
         
         .brands h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
             text-align: center;
         }
         
@@ -120,22 +199,31 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
         }
         
         .brand {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            padding: 15px 25px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
+            padding: 15px 30px;
+            background-color: var(--light);
+            border-radius: 8px;
+            color: var(--primary);
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .brand:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: scale(1.05);
         }
         
         /* Footer Section */
         .footer {
-            background-color: #333;
-            color: #fff;
-            padding: 50px 0;
+            background-color: var(--primary);
+            color: white;
+            padding: 80px 0;
             text-align: center;
         }
         
@@ -144,19 +232,52 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            color: rgba(255,255,255,0.8);
+            font-weight: 300;
         }
         
         .contact-btn {
             display: inline-block;
-            background-color: #fff;
-            color: #333;
-            padding: 12px 30px;
-            border-radius: 5px;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 30px;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-btn:hover {
+            background-color: transparent;
+            color: var(--accent);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .service-card {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .brand {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header Section -->
