@@ -721,28 +721,94 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
-                <p>Versatile Communication Specialist with expertise in <span class="highlight">graphic design</span>, <span class="highlight">digital storytelling</span>, and <span class="highlight">social media management</span></p>
-            </div>
             <div class="about-content">
                 <div class="about-img">
                     <img src="grace-about.jpg" alt="Grace Kubo"> <!-- Replace with her photo -->
                 </div>
                 <div class="about-text">
-                    <h3>My Professional Journey</h3>
                     <p>I'm a versatile and driven Communication Specialist with strong expertise in <span class="highlight">graphic design</span>, <span class="highlight">digital marketing</span>, and <span class="highlight">social media management</span>. My experience spans across retail, high-tech communications, and shopping centers.</p>
                     <p>With a keen eye for detail and a passion for <span class="highlight">visual storytelling</span>, I create designs that not only look beautiful but also communicate brand values effectively.</p>
                     <p>My approach combines creative thinking with strategic planning to deliver solutions that meet both aesthetic and business objectives.</p>
                     
-                    <div class="education">
-                        <h4>Education</h4>
-                        <p><i class="fas fa-graduation-cap"></i> Bachelor's Degree in Communication and Journalism</p>
-                        <p><i class="fas fa-university"></i> University of Washington, 2015</p>
-                    </div>
-                </div>
-            </div>
+                    <!-- Updated Education Section -->
+<div class="education">
+    <h4>Education & Certifications</h4>
+    <p><i class="fas fa-graduation-cap"></i> Bachelor's Degree in Communication and Journalism</p>
+    <p><i class="fas fa-university"></i> Rongo  University, 2024</p>
+    
+    <div class="certifications-list">
+        <div class="certification-item">
+            <i class="fas fa-certificate"></i> 
+            <a href="https://savanna.alxafrica.com/certificates/FC67fNM2XZ" target="_blank" rel="noopener">
+                AI Career Essentials (Verified)
+            </a>
         </div>
-    </section>
+        <div class="certification-item">
+            <i class="fas fa-certificate"></i> 
+            <a href="https://savanna.alxafrica.com/certificates/RHTz9nhGMC" target="_blank" rel="noopener">
+                Virtual Assistant Training (Verified)
+            </a>
+        </div>
+    </div>
+</div>
 
+<!-- Added CSS for the new elements -->
+<style>
+    .education {
+        margin-top: 30px;
+        padding: 25px;
+        background-color: var(--beige);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .education h4 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: var(--navy);
+        border-bottom: 2px solid var(--rose);
+        padding-bottom: 8px;
+    }
+    
+    .education p {
+        color: var(--navy);
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    .certifications-list {
+        margin-top: 15px;
+    }
+    
+    .certification-item {
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    
+    .certification-item:hover {
+        background-color: var(--white);
+        transform: translateX(5px);
+    }
+    
+    .certification-item a {
+        color: var(--navy);
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .certification-item a:hover {
+        color: var(--rose);
+    }
+    
+    .certification-item i.fa-certificate {
+        color: var(--rose);
+        margin-right: 10px;
+    }
+</style>
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="container">
@@ -804,48 +870,129 @@
         </div>
     </section>
 
-    <!-- Services Carousel -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Services</h2>
-                <p>Comprehensive design and marketing solutions tailored to your needs</p>
+    <!-- Services Grid Layout -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>My Services</h2>
+            <p>Comprehensive design and marketing solutions tailored to your needs</p>
+        </div>
+        <div class="services-grid">
+            <!-- Graphic Design -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3>Graphic Design</h3>
+                <p>Creative visual solutions that communicate brand identity and messaging effectively.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Brand Identity Design</li>
+                    <li><i class="fas fa-check"></i> Print & Digital Materials</li>
+                    <li><i class="fas fa-check"></i> Marketing Collateral</li>
+                    <li><i class="fas fa-check"></i> Logo Creation</li>
+                </ul>
             </div>
-            <div class="services-carousel">
-                <!-- Graphic Design -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Graphic Design</h3>
-                    <p>I work very well with our creativity and career in creating my relationships and great efficiency in product, including your target solutions.</p>
-                    <p><i class="fas fa-check"></i> Legalizing</p>
-                    <p><i class="fas fa-check"></i> Installation Design</p>
-                    <p><i class="fas fa-check"></i> Business Products</p>
-                    <p><i class="fas fa-check"></i> Analytics Designer</p>
-                </div>
-                
-                <!-- Social Media -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-hashtag"></i></div>
-                    <h3>Social Media Management</h3>
-                    <p>I can take multiple types of shopping strategies and play a variety of activities, including the delivery of products and other opportunities.</p>
-                    <p><i class="fas fa-check"></i> Design Development</p>
-                    <p><i class="fas fa-check"></i> Global Business Excellence</p>
-                    <p><i class="fas fa-check"></i> Product Management</p>
-                    <p><i class="fas fa-check"></i> Responsible business</p>
-                </div>
-                
-                <!-- Photography -->
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-camera"></i></div>
-                    <h3>Photography</h3>
-                    <p>Our best customer experience is that I support people working from online, mobile and online shopping platforms. We are also invited to digital technologies, websites, products and other applications.</p>
-                    <p><i class="fas fa-check"></i> Efficientness</p>
-                    <p><i class="fas fa-check"></i> Product & Safety Drives</p>
-                    <p><i class="fas fa-check"></i> Smart Equipment</p>
-                </div>
+            
+            <!-- Social Media -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hashtag"></i></div>
+                <h3>Social Media Management</h3>
+                <p>Strategic social media campaigns that engage audiences and grow your brand.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Content Strategy</li>
+                    <li><i class="fas fa-check"></i> Community Management</li>
+                    <li><i class="fas fa-check"></i> Analytics & Reporting</li>
+                    <li><i class="fas fa-check"></i> Campaign Management</li>
+                </ul>
+            </div>
+            
+            <!-- Photography -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-camera"></i></div>
+                <h3>Photography</h3>
+                <p>High-quality visual content that showcases your products and brand story.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Product Photography</li>
+                    <li><i class="fas fa-check"></i> Lifestyle Shoots</li>
+                    <li><i class="fas fa-check"></i> Image Editing</li>
+                    <li><i class="fas fa-check"></i> Branded Content</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* Services Grid Styles */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .service-card {
+        background-color: var(--beige);
+        border-radius: 10px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        color: var(--rose);
+        margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--navy);
+    }
+
+    .service-card p {
+        color: var(--olive);
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .service-features {
+        list-style: none;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .service-features li {
+        margin-bottom: 10px;
+        color: var(--navy);
+        display: flex;
+        align-items: center;
+    }
+
+    .service-features i {
+        color: var(--rose);
+        margin-right: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .service-card {
+            padding: 30px 20px;
+        }
+    }
+</style>
 
     <!-- Workflow Section -->
     <section class="workflow" id="workflow">
