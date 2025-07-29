@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grace Kubo - Graphic Designer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <style>
-        /* Grace Kubo's Color Palette */
+        /* Color Palette Inspired by Barista Cafe */
         :root {
-            --navy: #1A1A40;
-            --beige: #F0EAD6;
-            --olive: #6E7763;
-            --rose: #D6A4A4;
-            --charcoal: #202020;
-            --white: #FFFFFF;
+            --dark: #1A1A40;       /* Primary dark color */
+            --light: #F0EAD6;      /* Cream background */
+            --accent: #8A4F7D;     /* Purple accent */
+            --text: #333;          /* Main text color */
+            --white: #FFFFFF;      /* Pure white */
         }
         
         /* Global Styles */
@@ -26,9 +24,9 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--beige);
-            color: var(--charcoal);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
         }
@@ -42,11 +40,7 @@
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
-            color: var(--navy);
-        }
-        
-        .signature-font {
-            font-family: 'Dancing Script', cursive;
+            color: var(--dark);
         }
         
         a {
@@ -55,22 +49,35 @@
             transition: all 0.3s ease;
         }
         
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent);
+        }
+        
         /* Header/Navigation */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 25px 0;
+            padding: 20px 0;
             z-index: 1000;
-            background-color: rgba(255,255,255,0.9);
+            background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            padding: 15px 0;
-            background-color: rgba(255,255,255,0.98);
         }
         
         .nav-container {
@@ -82,12 +89,12 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--navy);
+            color: var(--dark);
         }
         
         .nav-links {
             display: flex;
-            gap: 35px;
+            gap: 30px;
         }
         
         .nav-links a {
@@ -102,7 +109,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--rose);
+            background-color: var(--accent);
             transition: width 0.3s ease;
         }
         
@@ -116,10 +123,8 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(rgba(26, 26, 64, 0.8), rgba(26, 26, 64, 0.8)), 
-                        url('grace-hero-bg.jpg'); /* Replace with her image */
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('grace-hero-bg.jpg') center/cover no-repeat;
             color: var(--white);
             text-align: center;
             padding-top: 80px;
@@ -131,42 +136,15 @@
         }
         
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            color: var(--white);
             line-height: 1.2;
-        }
-        
-        .hero .name-highlight {
-            font-family: 'Dancing Script', cursive;
-            font-size: 5rem;
-            color: var(--rose);
-            display: block;
-            margin: 10px 0;
         }
         
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             color: rgba(255,255,255,0.9);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 35px;
-            background-color: var(--rose);
-            color: white;
-            border-radius: 30px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--rose);
-        }
-        
-        .btn:hover {
-            background-color: transparent;
-            color: var(--rose);
         }
         
         /* About Section */
@@ -195,13 +173,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--rose);
-        }
-        
-        .section-title p {
-            color: var(--olive);
-            max-width: 700px;
-            margin: 0 auto;
+            background-color: var(--accent);
         }
         
         .about-content {
@@ -212,9 +184,9 @@
         
         .about-img {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .about-img img {
@@ -235,98 +207,31 @@
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
-            color: var(--navy);
         }
         
         .about-text p {
             margin-bottom: 20px;
-            color: var(--olive);
         }
         
-        .highlight {
-            color: var(--rose);
-            font-weight: 600;
-        }
-        
-        .education {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: var(--beige);
-            border-radius: 8px;
-        }
-        
-        .education h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .education p {
-            color: var(--navy);
-            font-weight: 500;
-        }
-        
-        /* Skills Section */
-        .skills {
-            padding: 80px 0;
-            background-color: var(--beige);
-        }
-        
-        .skill-bars {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .skill-item {
-            margin-bottom: 25px;
-        }
-        
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-        
-        .skill-name {
-            font-weight: 600;
-        }
-        
-        .skill-percent {
-            color: var(--rose);
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background-color: var(--white);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background-color: var(--rose);
-            border-radius: 5px;
-            width: 0;
-            transition: width 1.5s ease;
-        }
-        
-        /* Services Carousel */
+        /* Services Section */
         .services {
             padding: 100px 0;
-            background-color: var(--white);
+            background-color: var(--light);
         }
         
-        .services-carousel {
-            max-width: 900px;
-            margin: 0 auto;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
         
         .service-card {
-            background-color: var(--beige);
-            border-radius: 10px;
+            background-color: var(--white);
+            border-radius: 8px;
             padding: 40px 30px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin: 0 15px;
             transition: all 0.3s ease;
         }
         
@@ -336,8 +241,8 @@
         }
         
         .service-icon {
-            font-size: 3rem;
-            color: var(--rose);
+            font-size: 2.5rem;
+            color: var(--accent);
             margin-bottom: 20px;
         }
         
@@ -346,68 +251,7 @@
             margin-bottom: 15px;
         }
         
-        .service-card p {
-            color: var(--olive);
-            margin-bottom: 15px;
-        }
-        
-        /* Workflow Diagram */
-        .workflow {
-            padding: 80px 0;
-            background-color: var(--beige);
-        }
-        
-        .workflow-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            position: relative;
-        }
-        
-        .workflow-steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background-color: var(--rose);
-            z-index: 1;
-        }
-        
-        .step {
-            width: 20%;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-            color: var(--rose);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 3px solid var(--rose);
-        }
-        
-        .step h4 {
-            margin-bottom: 10px;
-        }
-        
-        .step p {
-            color: var(--olive);
-            font-size: 0.9rem;
-        }
-        
-        /* Portfolio Gallery */
+        /* Portfolio Section */
         .portfolio {
             padding: 100px 0;
             background-color: var(--white);
@@ -433,7 +277,6 @@
             height: 250px;
             object-fit: cover;
             display: block;
-            transition: transform 0.5s ease;
         }
         
         .gallery-item:hover {
@@ -441,87 +284,11 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
         
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(26, 26, 64, 0.9), transparent);
-            padding: 20px;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-        
-        .drive-link {
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        /* Lightbox */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        
-        .lightbox.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-        
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-        }
-        
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 80vh;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        .close-lightbox {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-        
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background-color: var(--navy);
+            background-color: var(--dark);
             color: var(--white);
-        }
-        
-        .contact .section-title h2 {
-            color: var(--white);
-        }
-        
-        .contact .section-title h2::after {
-            background-color: var(--rose);
         }
         
         .contact-form {
@@ -543,15 +310,10 @@
             width: 100%;
             padding: 12px 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             background-color: rgba(255,255,255,0.1);
             color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            background-color: rgba(255,255,255,0.2);
+            font-family: 'Poppins', sans-serif;
         }
         
         textarea.form-control {
@@ -559,24 +321,9 @@
             resize: vertical;
         }
         
-        .submit-btn {
-            background-color: var(--rose);
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--white);
-            color: var(--rose);
-        }
-        
         /* Footer */
         .footer {
-            background-color: var(--charcoal);
+            background-color: #111;
             color: var(--white);
             padding: 50px 0 20px;
             text-align: center;
@@ -590,52 +337,34 @@
         }
         
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
         }
         
         .social-link:hover {
-            background-color: var(--rose);
+            background-color: var(--accent);
             transform: translateY(-3px);
-        }
-        
-        .contact-info {
-            margin-top: 20px;
-        }
-        
-        .contact-info p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .contact-info i {
-            color: var(--rose);
         }
         
         .copyright {
             color: rgba(255,255,255,0.7);
             font-size: 0.9rem;
-            margin-top: 30px;
         }
         
         /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
             
-            .hero .name-highlight {
-                font-size: 4rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
             .about-content {
@@ -644,46 +373,6 @@
             
             .about-img {
                 margin-bottom: 30px;
-                max-width: 500px;
-            }
-            
-            .step {
-                width: 50%;
-                margin-bottom: 40px;
-            }
-            
-            .workflow-steps::before {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 0;
-            }
-            
-            .nav-links {
-                display: none; /* Mobile menu would go here */
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .name-highlight {
-                font-size: 3rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .step {
-                width: 100%;
             }
         }
     </style>
@@ -696,9 +385,7 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
-                <a href="#skills">Skills</a>
                 <a href="#services">Services</a>
-                <a href="#workflow">Process</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -709,8 +396,8 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Hello, I'm <span class="name-highlight signature-font">Grace Kubo</span></h1>
-                <p>GRAPHIC DESIGNER | SOCIAL MEDIA MANAGER | DIGITAL STORYTELLER</p>
+                <h1>Graphic Design with Purpose</h1>
+                <p>Creating visual identities that tell compelling brand stories</p>
                 <a href="#portfolio" class="btn">View My Work</a>
             </div>
         </div>
@@ -721,317 +408,72 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
+                <p>Versatile Communication Specialist with expertise in graphic design and digital marketing</p>
+            </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="grace-about.jpg" alt="Grace Kubo"> <!-- Replace with her photo -->
+                    <img src="grace-about.jpg" alt="Grace Kubo">
                 </div>
                 <div class="about-text">
-                    <p>I'm a versatile and driven Communication Specialist with strong expertise in <span class="highlight">graphic design</span>, <span class="highlight">digital marketing</span>, and <span class="highlight">social media management</span>. My experience spans across retail, high-tech communications, and shopping centers.</p>
-                    <p>With a keen eye for detail and a passion for <span class="highlight">visual storytelling</span>, I create designs that not only look beautiful but also communicate brand values effectively.</p>
-                    <p>My approach combines creative thinking with strategic planning to deliver solutions that meet both aesthetic and business objectives.</p>
+                    <h3>Hello, I'm Grace Kubo</h3>
+                    <p>I'm a versatile and driven Communication Specialist with strong expertise in graphic design, digital marketing, and social media management. My experience spans across retail, high-tech communications, and shopping centers.</p>
+                    <p>With a keen eye for detail and a passion for visual storytelling, I create designs that not only look beautiful but also communicate brand values effectively.</p>
                     
-                    <!-- Updated Education Section -->
-<div class="education">
-    <h4>Education & Certifications</h4>
-    <p><i class="fas fa-graduation-cap"></i> Bachelor's Degree in Communication and Journalism</p>
-    <p><i class="fas fa-university"></i> Rongo  University, 2024</p>
-    
-    <div class="certifications-list">
-        <div class="certification-item">
-            <i class="fas fa-certificate"></i> 
-            <a href="https://savanna.alxafrica.com/certificates/FC67fNM2XZ" target="_blank" rel="noopener">
-                AI Career Essentials (Verified)
-            </a>
-        </div>
-        <div class="certification-item">
-            <i class="fas fa-certificate"></i> 
-            <a href="https://savanna.alxafrica.com/certificates/RHTz9nhGMC" target="_blank" rel="noopener">
-                Virtual Assistant Training (Verified)
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Added CSS for the new elements -->
-<style>
-    .education {
-        margin-top: 30px;
-        padding: 25px;
-        background-color: var(--beige);
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    
-    .education h4 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-        color: var(--navy);
-        border-bottom: 2px solid var(--rose);
-        padding-bottom: 8px;
-    }
-    
-    .education p {
-        color: var(--navy);
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
-    
-    .certifications-list {
-        margin-top: 15px;
-    }
-    
-    .certification-item {
-        margin-bottom: 10px;
-        padding: 10px 15px;
-        background-color: rgba(255,255,255,0.7);
-        border-radius: 5px;
-        transition: all 0.3s ease;
-    }
-    
-    .certification-item:hover {
-        background-color: var(--white);
-        transform: translateX(5px);
-    }
-    
-    .certification-item a {
-        color: var(--navy);
-        font-weight: 500;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-    
-    .certification-item a:hover {
-        color: var(--rose);
-    }
-    
-    .certification-item i.fa-certificate {
-        color: var(--rose);
-        margin-right: 10px;
-    }
-</style>
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Skills</h2>
-                <p>The technical and creative abilities I bring to every project</p>
-            </div>
-            <div class="skill-bars">
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Adobe Creative Suite</span>
-                        <span class="skill-percent">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Social Media Strategy</span>
-                        <span class="skill-percent">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Brand Identity Design</span>
-                        <span class="skill-percent">92%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 92%"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Content Creation</span>
-                        <span class="skill-percent">88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Photography</span>
-                        <span class="skill-percent">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+                    <div class="education">
+                        <h4>Education & Certifications</h4>
+                        <p><i class="fas fa-graduation-cap"></i> Bachelor's Degree in Communication and Journalism</p>
+                        <p><i class="fas fa-university"></i> Rongo University, 2024</p>
+                        
+                        <div class="certifications-list">
+                            <div class="certification-item">
+                                <i class="fas fa-certificate"></i> 
+                                <a href="https://savanna.alxafrica.com/certificates/FC67fNM2XZ" target="_blank">
+                                    AI Career Essentials (Verified)
+                                </a>
+                            </div>
+                            <div class="certification-item">
+                                <i class="fas fa-certificate"></i> 
+                                <a href="https://savanna.alxafrica.com/certificates/RHTz9nhGMC" target="_blank">
+                                    Virtual Assistant Training (Verified)
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid Layout -->
-<section class="services" id="services">
-    <div class="container">
-        <div class="section-title">
-            <h2>My Services</h2>
-            <p>Comprehensive design and marketing solutions tailored to your needs</p>
-        </div>
-        <div class="services-grid">
-            <!-- Graphic Design -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                <h3>Graphic Design</h3>
-                <p>Creative visual solutions that communicate brand identity and messaging effectively.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Brand Identity Design</li>
-                    <li><i class="fas fa-check"></i> Print & Digital Materials</li>
-                    <li><i class="fas fa-check"></i> Marketing Collateral</li>
-                    <li><i class="fas fa-check"></i> Logo Creation</li>
-                </ul>
-            </div>
-            
-            <!-- Social Media -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-hashtag"></i></div>
-                <h3>Social Media Management</h3>
-                <p>Strategic social media campaigns that engage audiences and grow your brand.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Content Strategy</li>
-                    <li><i class="fas fa-check"></i> Community Management</li>
-                    <li><i class="fas fa-check"></i> Analytics & Reporting</li>
-                    <li><i class="fas fa-check"></i> Campaign Management</li>
-                </ul>
-            </div>
-            
-            <!-- Photography -->
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-camera"></i></div>
-                <h3>Photography</h3>
-                <p>High-quality visual content that showcases your products and brand story.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Product Photography</li>
-                    <li><i class="fas fa-check"></i> Lifestyle Shoots</li>
-                    <li><i class="fas fa-check"></i> Image Editing</li>
-                    <li><i class="fas fa-check"></i> Branded Content</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    /* Services Grid Styles */
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-    }
-
-    .service-card {
-        background-color: var(--beige);
-        border-radius: 10px;
-        padding: 40px 30px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    }
-
-    .service-icon {
-        font-size: 2.5rem;
-        color: var(--rose);
-        margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--navy);
-    }
-
-    .service-card p {
-        color: var(--olive);
-        margin-bottom: 20px;
-        flex-grow: 1;
-    }
-
-    .service-features {
-        list-style: none;
-        text-align: left;
-        margin-top: 20px;
-    }
-
-    .service-features li {
-        margin-bottom: 10px;
-        color: var(--navy);
-        display: flex;
-        align-items: center;
-    }
-
-    .service-features i {
-        color: var(--rose);
-        margin-right: 10px;
-        font-size: 0.9rem;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .services-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .service-card {
-            padding: 30px 20px;
-        }
-    }
-</style>
-
-    <!-- Workflow Section -->
-    <section class="workflow" id="workflow">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>My Creative Process</h2>
-                <p>How I approach every project to deliver exceptional results</p>
+                <h2>My Services</h2>
+                <p>Comprehensive design and marketing solutions</p>
             </div>
-            <div class="workflow-steps">
-                <div class="step">
-                    <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h4>Concept</h4>
-                    <p>Understanding your vision and goals</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Graphic Design</h3>
+                    <p>Creative visual solutions that communicate brand identity and messaging effectively.</p>
                 </div>
-                <div class="step">
-                    <div class="step-icon"><i class="fas fa-pencil-alt"></i></div>
-                    <h4>Design</h4>
-                    <p>Creating initial concepts and mockups</p>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hashtag"></i></div>
+                    <h3>Social Media</h3>
+                    <p>Strategic social media campaigns that engage audiences and grow your brand.</p>
                 </div>
-                <div class="step">
-                    <div class="step-icon"><i class="fas fa-comments"></i></div>
-                    <h4>Review</h4>
-                    <p>Collaborating on feedback and revisions</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon"><i class="fas fa-magic"></i></div>
-                    <h4>Refine</h4>
-                    <p>Perfecting every detail of the design</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon"><i class="fas fa-rocket"></i></div>
-                    <h4>Deliver</h4>
-                    <p>Providing final files and assets</p>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-camera"></i></div>
+                    <h3>Photography</h3>
+                    <p>High-quality visual content that showcases your products and brand story.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Gallery -->
+    <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
@@ -1039,65 +481,27 @@
                 <p>A selection of my recent design projects</p>
             </div>
             <div class="gallery">
-                <div class="gallery-item" data-category="branding">
-                    <img src="project1.jpg" alt="Brand Identity Project">
-                    <div class="gallery-overlay">
-                        <h4>Brand Identity</h4>
-                        <p>Logo and visual system for TURN</p>
-                    </div>
+                <div class="gallery-item">
+                    <img src="project1.jpg" alt="Brand Identity">
                 </div>
-                <div class="gallery-item" data-category="social">
+                <div class="gallery-item">
                     <img src="project2.jpg" alt="Social Media Campaign">
-                    <div class="gallery-overlay">
-                        <h4>Social Media Campaign</h4>
-                        <p>3-month strategy for RADIUM</p>
-                    </div>
                 </div>
-                <div class="gallery-item" data-category="print">
+                <div class="gallery-item">
                     <img src="project3.jpg" alt="Packaging Design">
-                    <div class="gallery-overlay">
-                        <h4>Packaging Design</h4>
-                        <p>Product line for RAZYNOW ENERGY</p>
-                    </div>
                 </div>
-                <div class="gallery-item" data-category="photography">
+                <div class="gallery-item">
                     <img src="project4.jpg" alt="Product Photography">
-                    <div class="gallery-overlay">
-                        <h4>Product Photography</h4>
-                        <p>Catalog images for AYSHANE</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="branding">
-                    <img src="project5.jpg" alt="Brand Guidelines">
-                    <div class="gallery-overlay">
-                        <h4>Brand Guidelines</h4>
-                        <p>Visual system for RAYH&MES</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="digital">
-                    <img src="project6.jpg" alt="Website Design">
-                    <div class="gallery-overlay">
-                        <h4>Website Design</h4>
-                        <p>E-commerce platform for DUDINA ATREA</p>
-                    </div>
                 </div>
             </div>
             
-            <div class="drive-link">
+            <div style="text-align: center; margin-top: 40px;">
                 <a href="https://drive.google.com/drive/folders/1InxW5R5uH_qNUCf9BXZy1tnW_lvXHkw4" class="btn" target="_blank">
-                    <i class="fab fa-google-drive"></i> View More Projects on Google Drive
+                    <i class="fab fa-google-drive"></i> View More Projects
                 </a>
             </div>
         </div>
     </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <div class="lightbox-content">
-            <img src="" alt="">
-        </div>
-    </div>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -1120,7 +524,7 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" class="form-control" required></textarea>
                     </div>
-                    <button type="submit" class="btn submit-btn">Send Message</button>
+                    <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
         </div>
@@ -1130,24 +534,14 @@
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="mailto:grace@example.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:kubowakesho@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
                 <a href="https://linkedin.com/in/gracekubo" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="tel:+1234567890" class="social-link"><i class="fas fa-phone"></i></a>
+                <a href="tel:+254790279402" class="social-link"><i class="fas fa-phone"></i></a>
             </div>
-            
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> kubowakesho@gmail.com</p>
-                <p><i class="fab fa-linkedin"></i> linkedin.com/in/gracekubo</p>
-                <p><i class="fas fa-phone"></i> (+254) 790-279 402</p>
-            </div>
-            
             <p class="copyright">© 2025 Grace Kubo. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         // Sticky navbar on scroll
         window.addEventListener('scroll', function() {
@@ -1156,95 +550,6 @@
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Animate skill bars when scrolled to
-        function animateSkills() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                const percent = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = percent;
-                }, 100);
-            });
-        }
-        
-        // Check if skills section is in view
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.bottom >= 0
-            );
-        }
-        
-        // Skills animation trigger
-        const skillsSection = document.querySelector('.skills');
-        let skillsAnimated = false;
-        
-        window.addEventListener('scroll', function() {
-            if (isInViewport(skillsSection) && !skillsAnimated) {
-                animateSkills();
-                skillsAnimated = true;
-            }
-        });
-        
-        // Initialize services carousel
-        $(document).ready(function(){
-            $('.services-carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                centerMode: true,
-                variableWidth: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            centerMode: false,
-                            variableWidth: false
-                        }
-                    }
-                ]
-            });
-        });
-        
-        // Lightbox functionality
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const lightbox = document.querySelector('.lightbox');
-        const lightboxImg = document.querySelector('.lightbox-content img');
-        const closeLightbox = document.querySelector('.close-lightbox');
-        
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const imgSrc = this.querySelector('img').src;
-                lightboxImg.src = imgSrc;
-                lightbox.classList.add('active');
-            });
-        });
-        
-        closeLightbox.addEventListener('click', function() {
-            lightbox.classList.remove('active');
-        });
-        
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
             }
         });
         
