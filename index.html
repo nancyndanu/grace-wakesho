@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grace Kubo - Portfolio</title>
+    <title>Grace Kubo - Graphic Designer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Color Palette */
+        /* Grace Kubo's Color Palette */
         :root {
-            --primary: #2A2D34;     /* Dark blue-gray for headings */
-            --secondary: #5C6F68;   /* Muted green for accents */
-            --accent: #8A4F7D;      /* Elegant purple for highlights */
-            --light: #F7F7F7;       /* Off-white for backgrounds */
-            --dark: #1A1A1A;        /* Nearly black for text */
-            --medium: #6D7275;      /* Medium gray for secondary text */
+            --navy: #1A1A40;
+            --beige: #F0EAD6;
+            --olive: #6E7763;
+            --rose: #D6A4A4;
+            --charcoal: #202020;
+            --white: #FFFFFF;
         }
         
         /* Global Styles */
@@ -20,143 +21,233 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', Arial, sans-serif;
         }
         
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--beige);
+            color: var(--charcoal);
             line-height: 1.7;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
         
-        h1, h2, h3 {
-            font-weight: 700;
-            color: var(--primary);
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--navy);
         }
         
-        /* Header Section */
-        .header {
-            text-align: center;
-            padding: 80px 0 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
         }
         
-        .header::before {
-            content: "";
-            position: absolute;
+        /* Header/Navigation */
+        .navbar {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-            background-position: bottom;
+            padding: 25px 0;
+            z-index: 1000;
+            background-color: rgba(255,255,255,0.9);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
         
-        .header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
+        .navbar.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255,255,255,0.98);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
             position: relative;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
         
-        .header p {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--rose);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(26, 26, 64, 0.8), rgba(26, 26, 64, 0.8)), 
+                        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            position: relative;
-            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--rose);
+            color: white;
+            border-radius: 30px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--rose);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--rose);
         }
         
         /* About Section */
         .about {
-            background-color: white;
-            padding: 80px 0;
-            margin: 0;
+            padding: 100px 0;
+            background-color: var(--white);
         }
         
-        .about h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
+        .section-title {
             text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
             position: relative;
             display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
         }
         
-        .about h2::after {
-            content: "";
+        .section-title h2::after {
+            content: '';
             position: absolute;
             bottom: -10px;
-            left: 0;
-            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
             height: 3px;
-            background: var(--accent);
+            background-color: var(--rose);
         }
         
-        .about p {
-            font-size: 1.1rem;
-            max-width: 800px;
+        .section-title p {
+            color: var(--olive);
+            max-width: 700px;
             margin: 0 auto;
-            text-align: center;
-            color: var(--medium);
-            line-height: 1.8;
         }
         
-        /* Certifications Section */
-        .certifications {
-            background-color: var(--light);
-            padding: 80px 0;
-            margin: 0;
-        }
-        
-        .certifications h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .certifications h3 {
-            text-align: center;
-            color: var(--accent);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .certifications p {
-            text-align: center;
-            color: var(--medium);
-            margin-bottom: 40px;
-        }
-        
-        .services {
+        .about-content {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--navy);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--olive);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--beige);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
         
         .service-card {
-            background-color: white;
+            background-color: var(--white);
             border-radius: 10px;
-            padding: 30px;
-            width: 350px;
+            padding: 40px 30px;
+            text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid var(--accent);
+            transition: all 0.3s ease;
         }
         
         .service-card:hover {
@@ -164,35 +255,56 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
+        .service-icon {
+            font-size: 3rem;
+            color: var(--rose);
+            margin-bottom: 20px;
+        }
+        
         .service-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-            text-align: center;
+            margin-bottom: 15px;
         }
         
         .service-card p {
-            font-size: 1rem;
-            color: var(--medium);
+            color: var(--olive);
             margin-bottom: 15px;
-            text-align: center;
         }
         
-        .service-card p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Brand Experience Section */
-        .brands {
-            background-color: white;
+        /* Certifications Section */
+        .certifications {
             padding: 80px 0;
-            margin: 0;
+            background-color: var(--white);
         }
         
-        .brands h2 {
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            text-align: center;
+        .certifications-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .certification-item {
+            background-color: var(--beige);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            color: var(--navy);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .certification-item:hover {
+            background-color: var(--rose);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Brand Experience */
+        .brands {
+            padding: 80px 0;
+            background-color: var(--beige);
         }
         
         .brand-logos {
@@ -200,148 +312,277 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            margin-top: 40px;
         }
         
         .brand {
-            font-size: 1.2rem;
-            font-weight: bold;
+            background-color: var(--white);
             padding: 15px 30px;
-            background-color: var(--light);
             border-radius: 8px;
-            color: var(--primary);
-            transition: all 0.3s;
+            font-weight: 600;
+            color: var(--navy);
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
         
         .brand:hover {
-            background-color: var(--accent);
+            background-color: var(--rose);
             color: white;
             transform: scale(1.05);
         }
         
-        /* Footer Section */
-        .footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--navy);
+            color: var(--white);
         }
         
-        .footer p {
-            margin-bottom: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: rgba(255,255,255,0.8);
-            font-weight: 300;
+        .contact .section-title h2 {
+            color: var(--white);
         }
         
-        .contact-btn {
-            display: inline-block;
-            background-color: var(--accent);
+        .contact .section-title h2::after {
+            background-color: var(--rose);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--rose);
             color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 30px;
-            transition: all 0.3s;
-            border: 2px solid var(--accent);
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        .contact-btn:hover {
-            background-color: transparent;
-            color: var(--accent);
+        .submit-btn:hover {
+            background-color: var(--white);
+            color: var(--rose);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--rose);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
         }
         
         /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img {
+                margin-bottom: 30px;
+            }
+        }
+        
         @media (max-width: 768px) {
-            .header h1 {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none; /* Mobile menu would go here */
+            }
+            
+            .hero h1 {
                 font-size: 2.5rem;
             }
             
-            .header p {
-                font-size: 1.2rem;
-            }
-            
-            .service-card {
-                width: 100%;
-                max-width: 400px;
-            }
-            
-            .brand {
-                padding: 12px 20px;
+            .hero p {
                 font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
-        <div class="container">
-            <h1>Hello,<br>I'M GRACE KUBO</h1>
-            <p>GRAPHIC DESIGNER | SOCIAL MEDIA MANAGER</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">GRACE KUBO</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#brands">Brands</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-    </header>
-    
-    <!-- About Section -->
-    <section class="about">
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
-            <h2>About Me</h2>
-            <p>I'm an versatile and driven Communication Specialist with strong expertise in graphic design, digital marketing, and social media management. Locations include a range of retailing and services to high-tech communications and/or shopping centers, as well as different retail for size ranging categories. Please contact company and contact our company.</p>
+            <div class="hero-content">
+                <h1>Graphic Design with Purpose</h1>
+                <p>Creating visual identities that tell compelling brand stories and connect with audiences</p>
+                <a href="#services" class="btn">View My Work</a>
+            </div>
         </div>
     </section>
-    
-    <!-- Certifications Section -->
-    <section class="certifications">
+
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <h2>CERTIFICATIONS</h2>
-            <h3>AUTHOR'S RESPONSE</h3>
-            <p>Virtual Adbit and Telecom</p>
-            
-            <h2>Services Offer</h2>
-            
-            <div class="services">
-                <!-- Graphic Design Card -->
-                <div class="service-card">
-                    <h3>Graphic Design</h3>
-                    <p>I work very well with our creativity and career in creating my relationships and great efficiency in product, including your target solutions.</p>
-                    <p>Legalizing</p>
-                    <p>Installation Design</p>
-                    <p>Business Products</p>
-                    <p>Analytics Designer</p>
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Versatile Communication Specialist with expertise in graphic design and digital marketing</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Grace Kubo">
                 </div>
-                
-                <!-- Social Media Card -->
-                <div class="service-card">
-                    <h3>Social Media Management</h3>
-                    <p>I can take multiple types of shopping strategies and play a variety of activities, including the delivery of products and other opportunities.</p>
-                    <p>Design Development</p>
-                    <p>Global Business Excellence</p>
-                    <p>Product Management</p>
-                    <p>Responsible business & business</p>
-                </div>
-                
-                <!-- Photography Card -->
-                <div class="service-card">
-                    <h3>Photography</h3>
-                    <p>Our best customer experience is that I support people working from online, mobile and online shopping platforms. We are also invited to digital technologies, websites, products and other applications.</p>
-                    <p>Efficientness</p>
-                    <p>Product & Safety Drives</p>
-                    <p>Smart Equipment</p>
+                <div class="about-text">
+                    <h3>Hello, I'm Grace Kubo</h3>
+                    <p>I'm a versatile and driven Communication Specialist with strong expertise in graphic design, digital marketing, and social media management. My experience spans across retail, high-tech communications, and shopping centers.</p>
+                    <p>With a keen eye for detail and a passion for visual storytelling, I create designs that not only look beautiful but also communicate brand values effectively.</p>
+                    <p>My approach combines creative thinking with strategic planning to deliver solutions that meet both aesthetic and business objectives.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Brand Experience Section -->
-    <section class="brands">
+
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <h2>BRAND EXPERIENCE</h2>
+            <div class="section-title">
+                <h2>My Services</h2>
+                <p>Comprehensive design and marketing solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <!-- Graphic Design -->
+                <div class="service-card">
+                    <div class="service-icon">✏️</div>
+                    <h3>Graphic Design</h3>
+                    <p>I work very well with our creativity and career in creating my relationships and great efficiency in product, including your target solutions.</p>
+                    <p>• Legalizing</p>
+                    <p>• Installation Design</p>
+                    <p>• Business Products</p>
+                    <p>• Analytics Designer</p>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Management</h3>
+                    <p>I can take multiple types of shopping strategies and play a variety of activities, including the delivery of products and other opportunities.</p>
+                    <p>• Design Development</p>
+                    <p>• Global Business Excellence</p>
+                    <p>• Product Management</p>
+                    <p>• Responsible business</p>
+                </div>
+                
+                <!-- Photography -->
+                <div class="service-card">
+                    <div class="service-icon">📷</div>
+                    <h3>Photography</h3>
+                    <p>Our best customer experience is that I support people working from online, mobile and online shopping platforms. We are also invited to digital technologies, websites, products and other applications.</p>
+                    <p>• Efficientness</p>
+                    <p>• Product & Safety Drives</p>
+                    <p>• Smart Equipment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+                <p>Professional qualifications that validate my expertise</p>
+            </div>
+            <div class="certifications-list">
+                <div class="certification-item">Virtual Adbit and Telecom</div>
+                <div class="certification-item">Author's Response</div>
+                <div class="certification-item">Graphic Design Certification</div>
+                <div class="certification-item">Social Media Marketing</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Experience -->
+    <section class="brands" id="brands">
+        <div class="container">
+            <div class="section-title">
+                <h2>Brand Experience</h2>
+                <p>Some of the brands I've had the pleasure to work with</p>
+            </div>
             <div class="brand-logos">
                 <div class="brand">TURN</div>
                 <div class="brand">RADIUM</div>
@@ -350,25 +591,71 @@
                 <div class="brand">AYSHANE</div>
                 <div class="brand">DUDINA ATREA</div>
                 <div class="brand">RAYH&MES</div>
-                <div class="brand">RAYH&MES</div>
-                <div class="brand">RATH&MES</div>
                 <div class="brand">RATH&MES</div>
             </div>
         </div>
     </section>
-    
-    <!-- Footer Section -->
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Let's collaborate on your next project</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Thank you for viewing my portfolio.</p>
-            <p>I am a new manufacturer through various chunks, or attempts to guide this production step purpose.</p>
-            <p>If you have something like some type, I hope my work seems to be hard, and we can help you make it important.</p>
-            <p>Let's collaborate:</p>
-            <p>Information generation</p>
-            <p>JUST THE 20-30S</p>
-            <p>Share Sales (Top 10 to Bottom 5 to Leads)</p>
-            <a href="#" class="contact-btn">Contact Me</a>
+            <div class="social-links">
+                <a href="#" class="social-link">IG</a>
+                <a href="#" class="social-link">FB</a>
+                <a href="#" class="social-link">LI</a>
+                <a href="#" class="social-link">BE</a>
+            </div>
+            <p class="copyright">© 2023 Grace Kubo. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Sticky navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
