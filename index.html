@@ -121,18 +121,23 @@
             width: 100%;
         }
         
-        /* Hero Section - Full Height Minimal */
+        /* Hero Section - Full Height with Background Image */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             padding-top: 80px;
-            background-color: var(--white);
+            background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.7)), 
+                        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             text-align: left;
+            position: relative;
         }
         
         .hero-content {
             max-width: 600px;
+            background-color: rgba(255,255,255,0.8);
+            padding: 40px;
+            backdrop-filter: blur(2px);
         }
         
         .hero h1 {
@@ -150,10 +155,26 @@
             letter-spacing: 0.5px;
         }
         
-        /* About Section - Clean Two Column */
+        /* About Section - Clean Two Column with Subtle Texture */
         .about {
             padding: 100px 0;
-            background-color: var(--white);
+            background: url('https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=20') center/cover fixed;
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.9);
+        }
+        
+        .about .container {
+            position: relative;
+            z-index: 1;
         }
         
         .section-title {
@@ -181,6 +202,8 @@
         
         .about-img {
             flex: 1;
+            border: 15px solid var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
         
         .about-img img {
@@ -224,10 +247,26 @@
             font-size: 0.8rem;
         }
         
-        /* Services Section - Minimal Cards */
+        /* Services Section - Minimal Cards with Texture */
         .services {
             padding: 100px 0;
-            background-color: var(--gray);
+            background: url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=20') center/cover;
+            position: relative;
+        }
+        
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(245,245,245,0.9);
+        }
+        
+        .services .container {
+            position: relative;
+            z-index: 1;
         }
         
         .services-grid {
@@ -242,6 +281,12 @@
             padding: 40px 30px;
             text-align: left;
             border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
         
         .service-icon {
@@ -290,10 +335,11 @@
             transform: scale(1.03);
         }
         
-        /* Contact Section - Minimal Form */
+        /* Contact Section - Dark with Subtle Texture */
         .contact {
             padding: 100px 0;
-            background-color: var(--black);
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
             color: var(--white);
         }
         
@@ -392,6 +438,11 @@
             
             .hero h1 {
                 font-size: 2.2rem;
+            }
+            
+            .hero-content {
+                padding: 30px;
+                margin: 0 20px;
             }
             
             .about-content {
@@ -535,8 +586,13 @@
                 <div class="gallery-item">
                     <img src="project4.jpg" alt="Product Photography">
                 </div>
-            </div>
-            
+                <div class="gallery-item">
+                    <img src="project5.jpg" alt="Product Photography">
+                </div>
+                <div class="gallery-item">
+                    <img src="project6.jpg" alt="Product Photography">
+             </div>
+                
             <div style="text-align: center; margin-top: 40px;">
                 <a href="https://drive.google.com/drive/folders/1InxW5R5uH_qNUCf9BXZy1tnW_lvXHkw4" class="btn" target="_blank">
                     <i class="fab fa-google-drive"></i> View More Projects
