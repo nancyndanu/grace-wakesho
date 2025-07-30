@@ -68,7 +68,7 @@
             color: var(--white);
         }
         
-        /* Header/Navigation - Minimal Black Bar */
+        /* Header/Navigation - Transparent with Background */
         .navbar {
             position: fixed;
             top: 0;
@@ -76,9 +76,13 @@
             width: 100%;
             padding: 20px 0;
             z-index: 1000;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
             background-color: var(--white);
             border-bottom: 1px solid var(--light-gray);
-            transition: all 0.3s ease;
         }
         
         .nav-container {
@@ -91,6 +95,11 @@
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 2px;
+            color: var(--white);
+        }
+        
+        .navbar.scrolled .logo {
+            color: var(--black);
         }
         
         .nav-links {
@@ -104,6 +113,11 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             position: relative;
+            color: var(--white);
+        }
+        
+        .navbar.scrolled .nav-links a {
+            color: var(--black);
         }
         
         .nav-links a::after {
@@ -113,52 +127,53 @@
             left: 0;
             width: 0;
             height: 1px;
-            background-color: var(--black);
+            background-color: var(--white);
             transition: width 0.3s ease;
+        }
+        
+        .navbar.scrolled .nav-links a::after {
+            background-color: var(--black);
         }
         
         .nav-links a:hover::after {
             width: 100%;
         }
         
-        /* Hero Section - Full Height with Background Image */
+        /* Hero Section - Full Height with Designer Background */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             padding-top: 80px;
-            background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.7)), 
-                        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             text-align: left;
             position: relative;
+            color: var(--white);
         }
         
         .hero-content {
             max-width: 600px;
-            background-color: rgba(255,255,255,0.8);
-            padding: 40px;
-            backdrop-filter: blur(2px);
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
             letter-spacing: 1px;
         }
         
         .hero p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            color: var(--dark-gray);
             font-weight: 300;
             letter-spacing: 0.5px;
         }
         
-        /* About Section - Clean Two Column with Subtle Texture */
+        /* About Section - Clean Two Column with Designer Background */
         .about {
             padding: 100px 0;
-            background: url('https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=20') center/cover fixed;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
             position: relative;
         }
         
@@ -183,10 +198,20 @@
         }
         
         .section-title h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: var(--black);
         }
         
         .section-title p {
@@ -203,7 +228,7 @@
         .about-img {
             flex: 1;
             border: 15px solid var(--white);
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
         }
         
         .about-img img {
@@ -217,7 +242,7 @@
         }
         
         .about-text h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 20px;
             font-weight: 500;
         }
@@ -247,10 +272,10 @@
             font-size: 0.8rem;
         }
         
-        /* Services Section - Minimal Cards with Texture */
+        /* Services Section - Minimal Cards with Designer Background */
         .services {
             padding: 100px 0;
-            background: url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=20') center/cover;
+            background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
             position: relative;
         }
         
@@ -286,16 +311,17 @@
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
         .service-icon {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 20px;
+            color: var(--black);
         }
         
         .service-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
             font-weight: 500;
         }
@@ -305,17 +331,65 @@
             color: var(--dark-gray);
         }
         
+        .service-features {
+            margin-top: 20px;
+        }
+        
+        .service-features h4 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .service-features ul {
+            list-style-type: none;
+        }
+        
+        .service-features li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .service-features li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--black);
+            font-weight: bold;
+        }
+        
         /* Portfolio Section - Grid Gallery */
         .portfolio {
             padding: 100px 0;
             background-color: var(--white);
         }
         
+        .portfolio-filter {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid var(--light-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--black);
+            color: var(--white);
+        }
+        
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 50px;
+            margin-top: 30px;
         }
         
         .gallery-item {
@@ -332,14 +406,75 @@
         }
         
         .gallery-item:hover img {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
         
-        /* Contact Section - Dark with Subtle Texture */
+        .gallery-item-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-caption {
+            transform: translateY(0);
+        }
+        
+        /* Client Grid in Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 60px;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .client-info {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .client-card {
+            padding: 20px;
+            border: 1px solid var(--light-gray);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .client-card i {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+        
+        .client-card h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        .client-card p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+        
+        /* Contact Section - Dark with Designer Background */
         .contact {
             padding: 100px 0;
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
-                        url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+                        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
             color: var(--white);
         }
         
@@ -347,13 +482,12 @@
             color: var(--white);
         }
         
-        .contact .section-title p {
-            color: rgba(255,255,255,0.7);
+        .contact .section-title h2::after {
+            background-color: var(--white);
         }
         
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        .contact .section-title p {
+            color: rgba(255,255,255,0.7);
         }
         
         .form-group {
@@ -393,17 +527,69 @@
             color: var(--black);
         }
         
-        /* Footer - Minimal */
+        /* Footer - Enhanced with Quick Links */
         .footer {
             background-color: var(--black);
             color: var(--white);
-            padding: 50px 0 20px;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--white);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
             text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
         .social-links {
             display: flex;
-            justify-content: center;
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -431,27 +617,48 @@
         }
         
         /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 gap: 20px;
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
-            .hero-content {
-                padding: 30px;
-                margin: 0 20px;
+            .services-grid {
+                grid-template-columns: 1fr;
             }
             
-            .about-content {
-                flex-direction: column;
-                gap: 40px;
+            .client-info {
+                grid-template-columns: 1fr;
             }
         }
         
-        @media (max-width: 600px) {
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+            }
+            
             .nav-links {
                 display: none;
             }
@@ -464,7 +671,12 @@
                 text-align: center;
             }
             
-            .services-grid {
+            .section-title h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -472,7 +684,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">GRACE KUBO</a>
             <div class="nav-links">
@@ -489,8 +701,8 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Graphic Design with Purpose</h1>
-                <p>Creating visual identities that tell compelling brand stories</p>
+                <h1>I'M GRACE KUBO</h1>
+                <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.5rem; margin-bottom: 30px;">GRAPHIC DESIGNER | SOCIAL MEDIA MANAGER</h2>
                 <a href="#portfolio" class="btn">View My Work</a>
             </div>
         </div>
@@ -501,7 +713,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
-                <p>Versatile Communication Specialist with expertise in graphic design and digital marketing</p>
+                <p>Versatile Communication Specialist with expertise in graphic design and digital storytelling</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
@@ -509,14 +721,15 @@
                 </div>
                 <div class="about-text">
                     <h3>Hello, I'm Grace Kubo</h3>
-                    <p>I'm a versatile and driven Communication Specialist with strong expertise in graphic design, digital marketing, and social media management. My experience spans across retail, high-tech communications, and shopping centers.</p>
-                    <p>With a keen eye for detail and a passion for visual storytelling, I create designs that not only look beautiful but also communicate brand values effectively.</p>
+                    <p>I'm a versatile and driven Communication Specialist with strong expertise in graphic design, digital storytelling, and social media management. I combine creative thinking with strategic execution to help brands communicate with clarity and impact online and offline.</p>
+                    <p>With hands-on experience across public and private sectors, I've delivered results for solar energy companies, procurement companies, and construction companies.</p>
                     
                     <div class="education">
-                        <h4>Education & Certifications</h4>
-                        <p><i class="fas fa-graduation-cap"></i> Bachelor's Degree in Communication and Journalism</p>
-                        <p><i class="fas fa-university"></i> Rongo University, 2024</p>
+                        <h4>Education</h4>
+                        <p><i class="fas fa-graduation-cap"></i> B.Sc. Communications & Journalism 2020-2024</p>
+                        <p><i class="fas fa-university"></i> Second Class Honours (Upper Division) - Rongo University</p>
                         
+                        <h4 style="margin-top: 30px;">Certifications</h4>
                         <div class="certifications-list">
                             <div class="certification-item">
                                 <i class="fas fa-certificate"></i> 
@@ -541,26 +754,51 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>My Services</h2>
-                <p>Comprehensive design and marketing solutions</p>
+                <h2>Services Offered</h2>
+                <p>Comprehensive design and marketing solutions tailored to your needs</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
                     <h3>Graphic Design</h3>
-                    <p>Creative visual solutions that communicate brand identity and messaging effectively.</p>
+                    <p>I offer design solutions that clearly convey your brand's message by understanding your goals and creating impactful visuals for your target audience.</p>
+                    <div class="service-features">
+                        <h4>Includes:</h4>
+                        <ul>
+                            <li>Logo Design</li>
+                            <li>Presentation Design</li>
+                            <li>Branding Collateral</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-hashtag"></i></div>
-                    <h3>Social Media</h3>
-                    <p>Strategic social media campaigns that engage audiences and grow your brand.</p>
+                    <h3>Social Media Management</h3>
+                    <p>I assist brands in growing and engaging on social media by implementing strategic planning, creating appealing visuals, and ensuring consistent communication.</p>
+                    <div class="service-features">
+                        <h4>Includes:</h4>
+                        <ul>
+                            <li>Strategy Development</li>
+                            <li>Content Calendar Creation</li>
+                            <li>Platform Management</li>
+                            <li>Engagement Tracking & Analytics</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-camera"></i></div>
                     <h3>Photography</h3>
-                    <p>High-quality visual content that showcases your products and brand story.</p>
+                    <p>Great brands deserve great visuals. I capture high-quality, story-driven imagery that brings your brand to life—perfect for digital campaigns, websites, and social media.</p>
+                    <div class="service-features">
+                        <h4>Includes:</h4>
+                        <ul>
+                            <li>BTS Documentation</li>
+                            <li>Product & Lifestyle Shoots</li>
+                            <li>Event Photography</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -570,29 +808,62 @@
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
-                <h2>My Portfolio</h2>
-                <p>A selection of my recent design projects</p>
+                <h2>Brand Experience</h2>
+                <p>Every story I tell—whether through words, visuals, or strategy—is guided by intention and purpose.</p>
             </div>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="graphic-design">Graphic Design</button>
+                <button class="filter-btn" data-filter="social-media">Social Media</button>
+                <button class="filter-btn" data-filter="photography">Photography</button>
+            </div>
+            
             <div class="gallery">
-                <div class="gallery-item">
+                <div class="gallery-item" data-category="graphic-design">
                     <img src="project1.jpg" alt="Brand Identity">
+                    <div class="gallery-item-caption">
+                        <h3>Raynow Energy</h3>
+                        <p>Primary Logo & Brand Identity</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="project2.jpg" alt="Social Media Campaign">
+                <div class="gallery-item" data-category="graphic-design">
+                    <img src="project2.jpg" alt="Secondary Logo">
+                    <div class="gallery-item-caption">
+                        <h3>Raynow Energy</h3>
+                        <p>Secondary Logo & Favicon</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="project3.jpg" alt="Packaging Design">
+                <div class="gallery-item" data-category="social-media">
+                    <img src="project3.jpg" alt="Social Media Campaign">
+                    <div class="gallery-item-caption">
+                        <h3>Social Media Campaign</h3>
+                        <p>Content Strategy & Execution</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-category="photography">
                     <img src="project4.jpg" alt="Product Photography">
+                    <div class="gallery-item-caption">
+                        <h3>Product Photography</h3>
+                        <p>Lifestyle & Product Shots</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="project5.jpg" alt="Product Photography">
+                <div class="gallery-item" data-category="graphic-design">
+                    <img src="project5.jpg" alt="Presentation Design">
+                    <div class="gallery-item-caption">
+                        <h3>Presentation Design</h3>
+                        <p>Corporate Deck Design</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="project6.jpg" alt="Product Photography">
-             </div>
-                
+                <div class="gallery-item" data-category="photography">
+                    <img src="project6.jpg" alt="Event Photography">
+                    <div class="gallery-item-caption">
+                        <h3>Event Photography</h3>
+                        <p>Corporate Event Coverage</p>
+                    </div>
+                </div>
+            </div>
+            
             <div style="text-align: center; margin-top: 40px;">
                 <a href="https://drive.google.com/drive/folders/1InxW5R5uH_qNUCf9BXZy1tnW_lvXHkw4" class="btn" target="_blank">
                     <i class="fab fa-google-drive"></i> View More Projects
@@ -605,25 +876,51 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Let's collaborate on your next project</p>
+                <h2>Let's Collaborate</h2>
+                <p>If you have come this far, thank you. I hope my work speaks to the kind of energy, creativity, and dedication I bring to every project.</p>
             </div>
-            <div class="contact-form">
-                <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="client-info">
+                    <div class="client-card">
+                        <i class="fas fa-user"></i>
+                        <h3>Grace Kubo</h3>
+                        <p>Graphic Designer & Social Media Manager</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                    <div class="client-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>kubowakesho@gmail.com</p>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    <div class="client-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>+254 790 279 402</p>
                     </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                    <div class="client-card">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p>Grace Kubo</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -631,24 +928,78 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="social-links">
-                <a href="mailto:kubowakesho@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/gracekubo" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="tel:+254790279402" class="social-link"><i class="fas fa-phone"></i></a>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Grace</h3>
+                    <p>Versatile Communication Specialist with expertise in graphic design, digital storytelling, and social media management.</p>
+                    <div class="social-links">
+                        <a href="mailto:kubowakesho@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://linkedin.com/in/gracekubo" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="tel:+254790279402" class="social-link"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Graphic Design</a></li>
+                        <li><a href="#services">Social Media Management</a></li>
+                        <li><a href="#services">Photography</a></li>
+                        <li><a href="#services">Brand Strategy</a></li>
+                        <li><a href="#services">Content Creation</a></li>
+                    </ul>
+                </div>
             </div>
-            <p class="copyright">© 2025 Grace Kubo. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Grace Kubo. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Sticky navbar on scroll
+        // Sticky navbar on scroll with background change
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
+            const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                navbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+                navbar.classList.add('scrolled');
             } else {
-                navbar.style.boxShadow = "none";
+                navbar.classList.remove('scrolled');
             }
+        });
+        
+        // Portfolio filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
         });
         
         // Form submission
