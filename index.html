@@ -385,21 +385,18 @@
             color: var(--white);
         }
         
-gallery {
-  display: flex;
-  flex-direction: column; /* Vertical stacking */
-  align-items: center; /* Center items horizontally */
-  gap: 30px; /* Space between logo groups */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px; /* Space between items */
   padding: 30px;
   background-color: #f8f9fa;
-  max-width: 500px; /* Constrain width */
+  max-width: 900px; /* Adjust container width */
   margin: 0 auto;
-  border-radius: 16px; /* Container rounding */
+  border-radius: 16px;
 }
 
 .gallery-item {
-  width: 100%; /* Full width of container */
-  height: auto; /* Height based on content */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -408,20 +405,21 @@ gallery {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 25px 20px;
-  transition: transform 0.3s ease;
-  gap: 12px; /* Space between logo and text */
+  transition: all 0.3s ease;
+  gap: 12px;
 }
 
 .gallery-item:hover {
-  transform: translateY(-5px); /* Lift effect instead of scale */
+  transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item img {
-  max-width: 180px; /* Logo width */
-  height: 50px; /* Fixed logo height */
+  max-width: 180px;
+  height: 50px;
   object-fit: contain;
 }
+
 
         
         /* Client Grid in Contact Section */
