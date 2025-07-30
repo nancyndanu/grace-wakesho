@@ -385,34 +385,41 @@
             color: var(--white);
         }
         
-     .gallery {
+gallery {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px; /* Space between logos */
-  padding: 20px;
-  background-color: #f8f9fa; /* Optional: light background */
+  flex-direction: column; /* Vertical stacking */
+  align-items: center; /* Center items horizontally */
+  gap: 30px; /* Space between logo groups */
+  padding: 30px;
+  background-color: #f8f9fa;
+  max-width: 500px; /* Constrain width */
+  margin: 0 auto;
+  border-radius: 16px; /* Container rounding */
 }
 
 .gallery-item {
-  width: 150px; /* Adjust size of each logo box */
-  height: 100px;
+  width: 100%; /* Full width of container */
+  height: auto; /* Height based on content */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
   transition: transform 0.3s ease;
+  gap: 12px; /* Space between logo and text */
 }
 
 .gallery-item:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px); /* Lift effect instead of scale */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item img {
-  max-width: 100%;
-  max-height: 80%;
+  max-width: 180px; /* Logo width */
+  height: 50px; /* Fixed logo height */
   object-fit: contain;
 }
 
