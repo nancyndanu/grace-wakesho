@@ -716,7 +716,7 @@
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="grace-about.jpg.png" alt="Grace Kubo" class="w-[250px] h-auto rounded">
+                    <img src="grace-about.jpg.png" alt="Grace Kubo" class="w-[250px] h-[250px]">
                 </div>
                 <div class="about-text">
                     <h3>Hello, I'm Grace Kubo</h3>
@@ -810,11 +810,6 @@
                 <h2>Brand Experience</h2>
                 <p>Every story I tell whether through words, visuals, or strategy is guided by intention and purpose.</p>
             </div>
-            
-            <div class="portfolio-filter">
-                <button class="filter-btn" data-filter="graphic-design">Logo Design</button>
-            </div>
-            
             <div class="gallery">
                 <div class="gallery-item" data-category="graphic-design">
                     <img src="project1.jpg.png" alt="Brand Identity">
@@ -971,29 +966,6 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
-        });
-        
-        // Portfolio filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
         });
         
         // Form submission
